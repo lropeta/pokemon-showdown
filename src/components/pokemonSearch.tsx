@@ -2,7 +2,7 @@ import { useState } from "react";
 import { fetchPokemon } from "../services/fetchPokemon";
 
 
-export default function Search(){
+export default function Search({ sendPokemon }){
     //State calls
     const [inputValue, setInputValue] = useState(""); //state to manage search input
     const [pokeData, setPokeData] = useState(null); //state to manage search output, poke
@@ -26,10 +26,11 @@ export default function Search(){
                     <p>HP: {pokeData.hp}</p>
                     <p>ATK: {pokeData.attack}</p>
                     <p>DEF: {pokeData.defense}</p>
+                    <button onClick = {() => sendPokemon(pokeData)}>Add to team</button>
                 </>
             : null}
 
-            <input type="text" placeholder="Pikachu..." onChange={
+            <input type="text" placeholder="Pikachu..." className = "border border-black" onChange={
                 (e) => setInputValue(e.target.value) //Run the output function each time the input is changed
             }/>
             <button onClick={changeUI}>Search</button>

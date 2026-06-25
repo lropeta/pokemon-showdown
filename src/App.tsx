@@ -1,10 +1,9 @@
-import Search from "./components/pokemonSearch"
+import TeamSelect from "./components/teamSelect"
 function App() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-      <Search></Search>
-      <h1 className="text-4xl font-bold">Pokemon Showdown</h1>
+      <TeamSelect></TeamSelect>
     </div>
   )
 }
