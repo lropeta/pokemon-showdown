@@ -2,9 +2,15 @@
 //It takes a pokemon name and returns the desired information of the pokemon using the pokeAPI
 
 async function fetchPokemon(name: string){ //parameter syntax in c "String pokemon"
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`); //backtics for to allow for variables in strings, await similar to wait PID, fetch pulls from given url
-    const data = await response.json(); //await pauses the function while downloading the data via .json() method
     
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`); //backtics for to allow for variables in strings, await similar to wait PID, fetch pulls from given url
+    //error case pokeomn not found
+    if(!response.ok){
+        alert("Pokemon not found!");
+        return
+    }
+    const data = await response.json(); //await pauses the function while downloading the data via .json() method
+
     //get the move data
 
     const moves = [];

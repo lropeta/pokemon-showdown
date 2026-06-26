@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Search from "./pokemonSearch";
+import Search from "./PokemonSearch";
 
 
 export default function TeamSelect(){
