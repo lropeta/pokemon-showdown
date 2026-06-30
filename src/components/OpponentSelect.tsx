@@ -48,12 +48,12 @@ export default function OpponentSelect({getTeam}){
     }
 
     return(
-        <>
-            <button onClick={()=>generateTeam()}>Generate Opponent Team</button>
+        <div className="flex flex-col gap-4 p-4 bg-gray-800 rounded-lg">
+            <p className="text-lg font-bold">Opponent Team</p>
+            <button className="bg-gray-600 rounded px-4 py-2" onClick={()=>generateTeam()}>Generate Opponent Team</button>
             {/* Display Members */}
-            <div>{variableText}</div>
-            {memberImages}
+            <div className="flex flex-row gap-2 flex-wrap">{memberImages}</div>
             {confirmButton}
-        </>
+        </div>
     )    
 }

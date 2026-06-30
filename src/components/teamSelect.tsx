@@ -15,7 +15,6 @@ export default function TeamSelect({getTeam}){
     }
 
     function removePokemon(index){
-        console.log("clicked")
         const newTeam = [];
         let newTeamCounter = 0
         for(let i = 0; i < members.length; i++){
@@ -24,7 +23,6 @@ export default function TeamSelect({getTeam}){
             newTeamCounter++;
             }
         }
-        console.log(newTeam);
         setMember(newTeam);
     }
 
@@ -43,7 +41,8 @@ export default function TeamSelect({getTeam}){
     let confirmButton = null;
     if(members.length === 3){
         confirmButton = 
-            <button className = "bg-green-500" onClick={()=>getTeam(members)}>Confirm Team?</button>
+            <button className = "bg-green-500" 
+                onClick={()=>getTeam(members)}>Confirm Team?</button>
     }
     return(
         <div className="flex flex-col gap-4 p-4 bg-gray-800 rounded-lg">
