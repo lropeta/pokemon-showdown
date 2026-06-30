@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fetchPokemon } from "../services/fetchPokemon";
 
-export default function OpponentSelect(){
+export default function OpponentSelect({getTeam}){
     //Step 1: State variable to track opponent team
     const [members, setMember] = useState([]) //useState(*variable type*)
 
@@ -40,12 +40,20 @@ export default function OpponentSelect(){
          variableText = <p>Opponent Team:</p>
     }
 
+    //function to confirm the opponent team
+    let confirmButton = null;
+    if(members.length === 3){
+        confirmButton = 
+            <button className="bg-green-500" onClick={()=>getTeam(members)}>Confirm Team?</button>
+    }
+
     return(
         <>
             <button onClick={()=>generateTeam()}>Generate Opponent Team</button>
             {/* Display Members */}
             <div>{variableText}</div>
             {memberImages}
+            {confirmButton}
         </>
     )    
 }

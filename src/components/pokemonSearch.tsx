@@ -17,7 +17,7 @@ export default function Search({ sendPokemon }){
 
 
     return (
-        <div>
+        <div className="flex flex-col gap-2 p-4 border border-gray-600 rounded-lg w-64">
             {/* if the data is null, render nothing */}
             {pokeData ? 
                 <>
@@ -26,14 +26,14 @@ export default function Search({ sendPokemon }){
                     <p>HP: {pokeData.hp}</p>
                     <p>ATK: {pokeData.attack}</p>
                     <p>DEF: {pokeData.defense}</p>
-                    <button onClick = {() => sendPokemon(pokeData)}>Add to team</button>
+                    <button className="bg-green-500" onClick = {() => sendPokemon(pokeData)}>Add to team</button>
                 </>
             : null}
 
             <input type="text" placeholder="Pikachu..." className = "border border-black" onChange={
                 (e) => setInputValue(e.target.value) //Run the output function each time the input is changed
             }/>
-            <button onClick={changeUI}>Search</button>
+            <button className="bg-gray-500" onClick={changeUI}>Search</button>
         </div>
     )
 }
