@@ -1,5 +1,7 @@
 import TeamSelect from "./components/teamSelect"
 import OpponentSelect from "./components/OpponentSelect"
+import Battle from "./components/Battle"
+
 import { useState } from "react"
 function App() {
   //state to manage battle phase
@@ -30,7 +32,7 @@ function App() {
           {startBattle}
         </div>
 
-  const battleUI = null;
+  const battleUI = <Battle getUserTeam = {playerTeam} getOpponentTeam = {opponentTeam}></Battle>;
   
 
   return (
